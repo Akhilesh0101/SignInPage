@@ -1,0 +1,34 @@
+<div class="container-fluid d-flex justify-content-center align-items-center" style="min-height: 100vh; ">
+    <div class="card mx-auto" style="max-width: 450px; width: 100%; border-radius: 15px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+        <div class="card-body">
+            <h5 class="card-title text-center text-primary mb-4">Sign Up</h5>
+            <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+                <div class="mb-3">
+                    <label for="name" class="form-label text-info">Name</label>
+                    <input type="text" id="name" class="form-control border-info" formControlName="name" />
+                    <div *ngIf="signUpForm.controls['name'].invalid && signUpForm.controls['name'].touched" class="text-danger">
+                        Name is required.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label text-info">Email</label>
+                    <input type="email" id="email" class="form-control border-info" formControlName="email" />
+                    <div *ngIf="signUpForm.controls['email'].invalid && signUpForm.controls['email'].touched" class="text-danger">
+                        Valid email is required.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label text-info">Password</label>
+                    <input type="password" id="password" class="form-control border-info" formControlName="password" />
+                    <div *ngIf="signUpForm.controls['password'].invalid && signUpForm.controls['password'].touched" class="text-danger">
+                        Password must be at least 6 characters.
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-success w-100" [disabled]="signUpForm.invalid">Sign Up</button>
+            </form>
+            <p class="text-center mt-3 text-muted">
+                Already have an account? <a routerLink="/sign-in" class="text-primary">Sign In</a>
+            </p>
+        </div>
+    </div>
+</div>
