@@ -25,6 +25,6 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     ])
   ],
   providers: [],
-  bootstrap: [UserProfileComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule {}
